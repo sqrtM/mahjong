@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "@symfony/stimulus-bridge": "^3.2.1",
+    "@symfony/webpack-encore": "^4.2.0",
+    "core-js": "^3.27.2",
+    "prop-types": "^15.8.1",
+    "react": "^18.0",
+    "react-dom": "^18.0",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig.json": "^1.0.11"
+  },
+  "scripts": {
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "watch": "encore dev --watch",
+    "build": "encore production --progress"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "@hotwired/stimulus": "^3.0.0",
+    "@symfony/ux-react": "file:vendor/symfony/ux-react/assets",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "sass": "^1.58.0",
+    "sass-loader": "^13.0.0",
+    "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5",
+    "webpack-notifier": "^1.15.0"
+  }
+}
