@@ -1,0 +1,58 @@
+.board {
+    color: red;
+    display: grid;
+    grid-template-columns: [left-hand] 5% [left-space] 10% [left-wall] 10% [left-discard] 15% [score] 20% [right-discard] 15% [right-wall] 10% [right-space] 10% [right-hand] 5%;
+    grid-template-rows: [top-hand] 5% [top-space] 10% [top-wall] 10% [top-discard] 15% [score] 20% [bottom-discard] 15% [bottom-wall] 10% [bottom-space] 10% [bottom-hand] 5%;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    height: 800px;
+}
+
+#north-player-section {
+    background-color: blueviolet;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    display: flex;
+
+    grid-column-start: left-discard;
+    grid-column-end: right-wall;
+    grid-row-start: top-hand;
+    grid-row-end: top-discard;
+}
+
+#west-player-section {
+    background-color: royalblue;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    display: flex;
+
+    grid-column-start: left-hand;
+    grid-column-end: score;
+    grid-row-start: top-discard;
+    grid-row-end: bottom-wall;
+}
+
+#south-player-section {
+    background-color: goldenrod;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    display: flex;
+
+    grid-column-start: left-discard;
+    grid-column-end: right-wall;
+    grid-row-start: bottom-discard;
+    grid-row-end: bottom-hand span;
+}
+
+#east-player-section {
+    background-color: greenyellow;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    display: flex;
+
+    grid-column-start: right-discard;
+    grid-column-end: right-hand span;
+    grid-row-start: top-wall;
+    grid-row-end: bottom-wall;
+}

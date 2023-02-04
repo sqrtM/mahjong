@@ -1,0 +1,15 @@
+@font-face {
+    font-family:"mahjong";
+    src:url("../fonts/Mahjong.TTF");
+}
+
+#hand {
+    font-family:"mahjong";
+    font-size: 100px;
+    text-transform:none;
+    color:#00ff80;
+    display: flex;
+    justify-content: center;
+
+}
+

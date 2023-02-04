@@ -22,15 +22,3 @@ import { registerReactControllerComponents } from '@symfony/ux-react';
 // internal components won't be automatically included in your JS built file if
 // they are not necessary.
 registerReactControllerComponents(require.context('./react/controllers', true, /\.(j|t)sx?$/));
-// ... .... ..... ...... ........ ...... ...... .... ... //
-
-import React from 'react';
-import { Hello } from './components/Hello';
-
-export function Main (): JSX.Element {
-  return (
-    <div>
-        <Hello />
-    </div>
-  );
-}
