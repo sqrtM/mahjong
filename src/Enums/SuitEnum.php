@@ -1,9 +1,9 @@
 <?php
 
-enum Suit {
-    case Bamboo;
-    case Pins;
-    case Characters;
-    case Dragons;
-    case Winds;
+enum Suit: string {
+    case Bamboo = "bamboo";
+    case Pins = "pins";
+    case Characters = "characters";
+    case Dragons = "dragons";
+    case Winds = "winds";
 }

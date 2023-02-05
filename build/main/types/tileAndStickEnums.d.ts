@@ -1,3 +1,4 @@
+import { Tile } from './tileType';
 export declare enum uprightTile {
     oneOfCharacters = "a",
     twoOfCharacters = "s",
@@ -76,3 +77,4 @@ export declare enum tenbouStick {
     fiveThousand = "0",
     tenThousand = "-"
 }
+export declare function getUprightTileString(tile: Tile): uprightTile;

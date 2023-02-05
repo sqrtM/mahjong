@@ -10,6 +10,13 @@
     color:#00ff80;
     display: flex;
     justify-content: center;
+    user-select: none;
+}
 
+#hand > span:hover {
+    transform: scaleY(1.75) scaleX(1.75);
+    transform-origin: bottom;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
