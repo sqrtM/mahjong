@@ -2,7 +2,7 @@
 
 class MahjongDeck
 {
-    private array $deck;
+    private array $deck = [];
     private int $index = 0;
 
     public function initDeck(): array

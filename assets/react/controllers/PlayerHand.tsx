@@ -7,7 +7,7 @@ import axios from 'axios'
 
 interface IHand {
   hand: Tile[]
-  cardDrawn: any
+  cardDrawn: Tile
 }
 
 export default function (props: IHand): JSX.Element {
@@ -15,6 +15,7 @@ export default function (props: IHand): JSX.Element {
   let playerHand = props.hand;
   let cardDrawn = props.cardDrawn;
 
+  ////// THIS DOES NOT WORK YET.
   function handleClickTile(tile: Tile, index: number) {
     let newCard: Tile = {
       suit: Suit.Bamboo,
