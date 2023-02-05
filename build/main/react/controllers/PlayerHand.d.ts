@@ -1,2 +1,5 @@
 import '../../styles/PlayerHand.module.css';
-export default function (): JSX.Element;
+interface IHand {
+}
+export default function (props: IHand): JSX.Element;
+export {};

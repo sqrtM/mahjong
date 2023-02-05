@@ -9,8 +9,11 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PageController extends AbstractController
 {
-    #[Route('/', name: 'hello', methods: ['GET'])]
-    public function hello(): Response
+    
+
+
+    #[Route('/', name: 'renderGameScreen', methods: ['GET'])]
+    public function renderGameScreen(): Response
     {
         return $this->render('base.html.twig');
     }
