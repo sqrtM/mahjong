@@ -10,13 +10,17 @@ enum Value: int {
     case Seven = 7;
     case Eight = 8;
     case Nine = 9;
+}
 
-    case East = 10;
-    case North = 11;
-    case West = 12;
-    case South = 13;
+enum Wind: int {
+    case East = 1;
+    case North = 2;
+    case West = 3;
+    case South = 4;
+}
 
-    case Red = 14;
-    case Green = 15;
-    case White = 16;
+enum Dragon: int {
+    case Red = 1;
+    case Green = 2;
+    case White = 3;
 }

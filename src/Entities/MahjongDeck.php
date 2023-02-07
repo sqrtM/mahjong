@@ -2,15 +2,16 @@
 
 namespace App\Entity;
 
+use Dragon;
 use Suit;
 use Value;
+use Wind;
 
 class MahjongDeck
 {
     public function initDeck(): array
     {
-        // i'm not sure why we have to start with one in the chamber here, but it makes
-        // the program happy, so whatever I guess.
+
         $new_deck = [];
 
         // init all numbers.
@@ -51,31 +52,31 @@ class MahjongDeck
             }
         }
         // init the winds
-        for ($i = Value::East->value; $i <= Value::South->value; $i++) {
+        for ($i = Wind::East->value; $i <= Wind::South->value; $i++) {
             // four copies of each.
             for ($j = 0; $j < 4; $j++) {
                 array_push(
                     $new_deck,
                     new MahjongTile(
                             Suit::Winds,
-                        Value::tryFrom($i),
+                        Wind::tryFrom($i),
                         ($j == 3 && $i == 5),
-                        Suit::Winds->value . Value::tryFrom($i)->value
+                            Suit::Winds->value . Wind::tryFrom($i)->value
                     )
                 );
             }
         }
         // init the dragons
-        for ($i = Value::Red->value; $i <= Value::White->value; $i++) {
+        for ($i = Dragon::Red->value; $i <= Dragon::White->value; $i++) {
             // four copies of each.
             for ($j = 0; $j < 4; $j++) {
                 array_push(
                     $new_deck,
                     new MahjongTile(
                             Suit::Dragons,
-                        Value::tryFrom($i),
+                        Dragon::tryFrom($i),
                         ($j == 3 && $i == 5),
-                        Suit::Dragons->value . Value::tryFrom($i)->value
+                            Suit::Dragons->value . Dragon::tryFrom($i)->value
                     )
                 );
             }

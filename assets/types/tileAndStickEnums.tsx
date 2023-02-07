@@ -1,4 +1,4 @@
-import { Value } from './tileType'
+import { Dragon, Value, Wind } from './tileType';
 
 export enum UprightTile {
   oneOfCharacters = 'a',
@@ -40,47 +40,6 @@ export enum UprightTile {
   greenDragon = '6',
   whiteDragon = '5',
 }
-
-export const uprightTileArray = [
-  UprightTile.oneOfCharacters,
-  UprightTile.twoOfCharacters,
-  UprightTile.threeOfCharacters,
-  UprightTile.fourOfCharacters,
-  UprightTile.fiveOfCharacters,
-  UprightTile.sixOfCharacters,
-  UprightTile.sevenOfCharacters,
-  UprightTile.eightOfCharacters,
-  UprightTile.nineOfCharacters,
-
-  UprightTile.oneOfPins,
-  UprightTile.twoOfPins,
-  UprightTile.threeOfPins,
-  UprightTile.fourOfPins,
-  UprightTile.fiveOfPins,
-  UprightTile.sixOfPins,
-  UprightTile.sevenOfPins,
-  UprightTile.eightOfPins,
-  UprightTile.nineOfPins,
-
-  UprightTile.oneOfBamboo,
-  UprightTile.twoOfBamboo,
-  UprightTile.threeOfBamboo,
-  UprightTile.fourOfBamboo,
-  UprightTile.fiveOfBamboo,
-  UprightTile.sixOfBamboo,
-  UprightTile.sevenOfBamboo,
-  UprightTile.eightOfBamboo,
-  UprightTile.nineOfBamboo,
-
-  UprightTile.eastTile,
-  UprightTile.northTile,
-  UprightTile.westTile,
-  UprightTile.southTile,
-
-  UprightTile.redDragon,
-  UprightTile.greenDragon,
-  UprightTile.whiteDragon,
-]
 
 export enum SidewaysTile {
   oneOfCharacters = 'A',
@@ -132,14 +91,6 @@ export enum TenbouStick {
 
 export function getUprightTileStringFromId(id: string): UprightTile {
   let idArr = id.split('');
-  // quick check to see if the card is a dragon or not. 
-  // points to a flaw in my design, but hopefully this
-  // will allow everything to serialize relatively
-  // cleanly.
-  if (idArr.length > 2 && !isNaN(idArr[idArr.length - 1] as any)) {
-    idArr[1] = idArr[1] + idArr[2]
-    idArr.pop()
-  }
   let returnValue: UprightTile = UprightTile.eastTile
   switch (idArr[0]) {
     case 'b': {
@@ -267,19 +218,19 @@ export function getUprightTileStringFromId(id: string): UprightTile {
     }
     case 'w': {
       switch (idArr[1]) {
-        case Value.East.toString(): {
+        case Wind.East.toString(): {
           returnValue = UprightTile.eastTile
           break
         }
-        case Value.North.toString(): {
+        case Wind.North.toString(): {
           returnValue = UprightTile.northTile
           break
         }
-        case Value.West.toString(): {
+        case Wind.West.toString(): {
           returnValue = UprightTile.westTile
           break
         }
-        case Value.South.toString(): {
+        case Wind.South.toString(): {
           returnValue = UprightTile.southTile
           break
         }
@@ -289,15 +240,15 @@ export function getUprightTileStringFromId(id: string): UprightTile {
     case 'd':
       {
         switch (idArr[1]) {
-          case Value.Green.toString(): {
+          case Dragon.Green.toString(): {
             returnValue = UprightTile.greenDragon
             break
           }
-          case Value.Red.toString(): {
+          case Dragon.Red.toString(): {
             returnValue = UprightTile.redDragon
             break
           }
-          case Value.White.toString(): {
+          case Dragon.White.toString(): {
             returnValue = UprightTile.whiteDragon
             break
           }

@@ -34,7 +34,6 @@ export declare enum UprightTile {
     greenDragon = "6",
     whiteDragon = "5"
 }
-export declare const uprightTileArray: UprightTile[];
 export declare enum SidewaysTile {
     oneOfCharacters = "A",
     twoOfCharacters = "S",

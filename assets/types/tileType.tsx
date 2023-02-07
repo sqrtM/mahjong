@@ -36,3 +36,16 @@ export enum Value {
   Green = 15,
   White = 16,
 }
+
+export enum Wind {
+  East = 1,
+  North = 2,
+  West = 3,
+  South = 4,
+}
+
+export enum Dragon {
+  Red = 1,
+  Green = 2,
+  White = 3,
+}

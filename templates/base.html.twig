@@ -20,6 +20,6 @@
         {% endblock %}
     </head>
     <div {{ react_component('board')}}></div>
-    <div {{ react_component('PlayerHand', { 'hand': hand, 'cardDrawn': cardDrawn }) }}></div>
+    <div {{ react_component('PlayerHand', { 'hand': hand }) }}></div>
 </div>
 </html>

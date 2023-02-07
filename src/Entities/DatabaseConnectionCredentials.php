@@ -2,14 +2,14 @@
 
 namespace App\Entities;
 
-class DatabaseConnectionCredentials 
+class DatabaseConnectionCredentials
 {
     private string $dbhost;
     private string $dbuser;
     private string $dbpass;
     private string $dbname;
 
-    public function __construct(string $host, string $user, string $pass, string $name) 
+    public function __construct(string $host, string $user, string $pass, string $name)
     {
         $this->dbhost = $host;
         $this->dbuser = $user;
@@ -17,16 +17,20 @@ class DatabaseConnectionCredentials
         $this->dbname = $name;
     }
 
-    public function host() {
+    public function host()
+    {
         return $this->dbhost;
     }
-    public function user() {
+    public function user()
+    {
         return $this->dbuser;
     }
-    public function pass() {
+    public function pass()
+    {
         return $this->dbpass;
     }
-    public function name() {
+    public function name()
+    {
         return $this->dbname;
     }
 }
