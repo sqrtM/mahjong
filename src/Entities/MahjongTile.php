@@ -1,21 +1,27 @@
 <?php
 
+namespace App\Entity;
+use JsonSerializable;
+use Suit;
+use Value;
+
+
 class MahjongTile implements JsonSerializable
 {
     private Suit $suit;
     private Value $value;
-    //dont worry about reds yet
+    private string $tileId;
     private bool $isRed = false;
-
     private bool $isHonor = false;
     private bool $isTerminal = false;
     private bool $isSimple = false;
 
-    public function __construct(Suit $suit, Value $value, bool $isRed)
+    public function __construct(Suit $suit, Value $value, bool $isRed, string $tileId)
     {
         $this->suit = $suit;
         $this->value = $value;
         $this->isRed = $isRed;
+        $this->tileId = $tileId;
 
         if ($suit == Suit::Dragons || $suit == Suit::Winds) {
             $this->isHonor = true;
@@ -27,6 +33,11 @@ class MahjongTile implements JsonSerializable
             }
         }
     }
+
+    public function tileId() {
+        return $this->tileId;
+    }
+
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {

@@ -1,8 +1,7 @@
 import React from 'react'
 import '../../styles/PlayerHand.module.css'
-import { getUprightTileString } from '../../types/tileAndStickEnums'
-import { Tile } from '../../../build/main/types/tileType'
-import { Suit, Value } from '../../types/tileType'
+import { getUprightTileStringFromId } from '../../types/tileAndStickEnums';
+import { Suit, Tile, Value } from '../../types/tileType'
 import axios from 'axios'
 
 interface IHand {
@@ -17,48 +16,37 @@ export default function (props: IHand): JSX.Element {
 
   ////// THIS DOES NOT WORK YET.
   function handleClickTile(tile: Tile, index: number) {
-    let newCard: Tile = {
-      suit: Suit.Bamboo,
-      value: Value.One,
-      isRed: false,
-      isHonor: false,
-      isTerminal: false,
-      isSimple: false,
-    };
-    axios.post("http://127.0.0.1:8000/api/discard", tile).then(res => newCard = res.data)
+    axios.post("http://127.0.0.1:8000/api/discard", tile).then(res => console.log(res))
     playerHand[index] = cardDrawn
-    cardDrawn = newCard;
-
   }
 
-  const order = ['characters', 'pins', 'bamboo', 'winds', 'dragons']
-  props.hand.sort(function (a, b) {
+  const order = ['c', 'p', 'b', 'w', 'd']
+  playerHand.sort(function (a, b) {
     return a.value - b.value
   })
-  props.hand.sort(function (a, b) {
+  playerHand.sort(function (a, b) {
     return order.indexOf(a.suit) - order.indexOf(b.suit)
   })
 
   return (
     <div id="hand">
-      {props.hand.map((i: Tile, index: number) => {
+      {playerHand.map((i: Tile, index: number) => {
         return (
           <span 
             style={{ color: i.isRed ? 'red' : '' }}
-            key={i.value + (Math.random() * 10)}
+            key={35 + (Math.random() * 10)}
             onClick={() => handleClickTile(i, index)}
-          
           >
-            {getUprightTileString(i)}
+            {getUprightTileStringFromId(i.tileId)}
           </span>
         )
       })}
       +
       <span
-        style={{ color: props.cardDrawn.isRed ? 'red' : '' }}
-        key={props.cardDrawn.value + (Math.random() * 10)}
+        //style={{ color: props.cardDrawn.isRed ? 'red' : '' }}
+        key={20 + (Math.random() * 10)}
       >
-        {getUprightTileString(props.cardDrawn)}
+        {/*getUprightTileStringFromId(props.cardDrawn.tileId)*/}
       </span>
     </div>
   )

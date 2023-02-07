@@ -1,5 +1,5 @@
 import '../../styles/PlayerHand.module.css';
-import { Tile } from '../../../build/main/types/tileType';
+import { Tile } from '../../types/tileType';
 interface IHand {
     hand: Tile[];
     cardDrawn: Tile;

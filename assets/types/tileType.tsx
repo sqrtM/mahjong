@@ -1,6 +1,7 @@
 export type Tile = {
   suit: Suit
-  value: Value
+  value: Value,
+  tileId: string,
   isRed: boolean
   isHonor: boolean
   isTerminal: boolean
@@ -26,12 +27,12 @@ export enum Value {
   Eight = 8,
   Nine = 9,
 
-  Red = 10,
-  Green = 11,
-  White = 12,
+  East = 10,
+  West = 11,
+  North = 12,
+  South = 13,
 
-  East = 13,
-  West = 14,
-  North = 15,
-  South = 16,
+  Red = 14,
+  Green = 15,
+  White = 16,
 }

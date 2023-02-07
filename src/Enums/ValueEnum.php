@@ -11,12 +11,12 @@ enum Value: int {
     case Eight = 8;
     case Nine = 9;
 
-    case Red = 10;
-    case Green = 11;
-    case White = 12;
+    case East = 10;
+    case North = 11;
+    case West = 12;
+    case South = 13;
 
-    case East = 13;
-    case West = 14;
-    case North = 15;
-    case South = 16;
+    case Red = 14;
+    case Green = 15;
+    case White = 16;
 }

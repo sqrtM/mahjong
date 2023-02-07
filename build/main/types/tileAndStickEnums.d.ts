@@ -1,5 +1,4 @@
-import { Tile } from './tileType';
-export declare enum uprightTile {
+export declare enum UprightTile {
     oneOfCharacters = "a",
     twoOfCharacters = "s",
     threeOfCharacters = "d",
@@ -9,15 +8,6 @@ export declare enum uprightTile {
     sevenOfCharacters = "j",
     eightOfCharacters = "k",
     nineOfCharacters = "l",
-    oneOfBamboo = "z",
-    twoOfBamboo = "x",
-    threeOfBamboo = "c",
-    fourOfBamboo = "v",
-    fiveOfBamboo = "b",
-    sixOfBamboo = "n",
-    sevenOfBamboo = "m",
-    eightOfBamboo = ",",
-    nineOfBamboo = ".",
     oneOfPins = "q",
     twoOfPins = "w",
     threeOfPins = "e",
@@ -27,15 +17,25 @@ export declare enum uprightTile {
     sevenOfPins = "u",
     eightOfPins = "i",
     nineOfPins = "o",
-    northTile = "4",
-    southTile = "2",
+    oneOfBamboo = "z",
+    twoOfBamboo = "x",
+    threeOfBamboo = "c",
+    fourOfBamboo = "v",
+    fiveOfBamboo = "b",
+    sixOfBamboo = "n",
+    sevenOfBamboo = "m",
+    eightOfBamboo = ",",
+    nineOfBamboo = ".",
     eastTile = "1",
+    northTile = "4",
     westTile = "3",
-    whiteDragon = "5",
+    southTile = "2",
+    redDragon = "7",
     greenDragon = "6",
-    redDragon = "7"
+    whiteDragon = "5"
 }
-export declare enum sidewaysTile {
+export declare const uprightTileArray: UprightTile[];
+export declare enum SidewaysTile {
     oneOfCharacters = "A",
     twoOfCharacters = "S",
     threeOfCharacters = "D",
@@ -45,15 +45,6 @@ export declare enum sidewaysTile {
     sevenOfCharacters = "J",
     eightOfCharacters = "K",
     nineOfCharacters = "L",
-    oneOfBamboo = "Z",
-    twoOfBamboo = "X",
-    threeOfBamboo = "C",
-    fourOfBamboo = "V",
-    fiveOfBamboo = "B",
-    sixOfBamboo = "N",
-    sevenOfBamboo = "M",
-    eightOfBamboo = "<",
-    nineOfBamboo = ">",
     oneOfPins = "Q",
     twoOfPins = "W",
     threeOfPins = "E",
@@ -63,18 +54,27 @@ export declare enum sidewaysTile {
     sevenOfPins = "U",
     eightOfPins = "I",
     nineOfPins = "O",
-    northTile = "$",
-    southTile = "\"",
+    oneOfBamboo = "Z",
+    twoOfBamboo = "X",
+    threeOfBamboo = "C",
+    fourOfBamboo = "V",
+    fiveOfBamboo = "B",
+    sixOfBamboo = "N",
+    sevenOfBamboo = "M",
+    eightOfBamboo = "<",
+    nineOfBamboo = ">",
     eastTile = "!",
+    northTile = "$",
     westTile = "#",
-    whiteDragon = "%",
+    southTile = "\"",
+    redDragon = "'",
     greenDragon = "&",
-    redDragon = "'"
+    whiteDragon = "%"
 }
-export declare enum tenbouStick {
+export declare enum TenbouStick {
     oneHundred = "8",
     oneThousand = "9",
     fiveThousand = "0",
     tenThousand = "-"
 }
-export declare function getUprightTileString(tile: Tile): uprightTile;
+export declare function getUprightTileStringFromId(id: string): UprightTile;
