@@ -10,6 +10,18 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * for when we are drawing tiles:
+ * 1.) refactor the tileId strings to where a capital char = red.
+ * i.e., C5 = red char5, but c5 = char5.
+ * 
+ * 2.) use the substring function from postgres https://w3resource.com/PostgreSQL/substring-function.php
+ * to extract the first 2 characters from the deck. then, you will always get exactly one tile
+ * without needing to do any weird fancy (expensive!) manip. 
+ * 
+ * 3.) create a new column in the mahjong_tables table called "dora" with the last 8 tiles (16 chars)
+ * from the deck on init. 
+ */
 class PageController extends AbstractController
 {
     private function init_env(): DatabaseConnectionCredentials
