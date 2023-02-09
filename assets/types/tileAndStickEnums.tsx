@@ -93,7 +93,7 @@ export function getUprightTileStringFromId(id: string): UprightTile {
   let idArr = id.split('');
   let returnValue: UprightTile = UprightTile.eastTile
   switch (idArr[0]) {
-    case 'b': {
+    case 'b': case 'B': {
       switch (idArr[1]) {
         case Value.One.toString(): {
           returnValue = UprightTile.oneOfBamboo
@@ -112,7 +112,7 @@ export function getUprightTileStringFromId(id: string): UprightTile {
           break
         }
         case Value.Five.toString(): {
-          returnValue = idArr.length > 2 ? UprightTile.fiveOfBamboo : UprightTile.fiveOfBamboo
+          returnValue = UprightTile.fiveOfBamboo
           break
         }
         case Value.Six.toString(): {
@@ -134,7 +134,7 @@ export function getUprightTileStringFromId(id: string): UprightTile {
       }
       break
     }
-    case 'c': {
+    case 'c': case 'C': {
       switch (idArr[1]) {
         case Value.One.toString(): {
           returnValue = UprightTile.oneOfCharacters
@@ -153,7 +153,7 @@ export function getUprightTileStringFromId(id: string): UprightTile {
           break
         }
         case Value.Five.toString(): {
-          returnValue = idArr.length > 2 ? UprightTile.fiveOfCharacters : UprightTile.fiveOfCharacters
+          returnValue = UprightTile.fiveOfCharacters
           break
         }
         case Value.Six.toString(): {
@@ -175,7 +175,7 @@ export function getUprightTileStringFromId(id: string): UprightTile {
       }
       break
     }
-    case 'p': {
+    case 'p': case 'P': {
       switch (idArr[1]) {
         case Value.One.toString(): {
           returnValue = UprightTile.oneOfPins
@@ -194,7 +194,7 @@ export function getUprightTileStringFromId(id: string): UprightTile {
           break
         }
         case Value.Five.toString(): {
-          returnValue = idArr.length > 2 ? UprightTile.fiveOfPins : UprightTile.fiveOfPins
+          returnValue = UprightTile.fiveOfPins
           break
         }
         case Value.Six.toString(): {

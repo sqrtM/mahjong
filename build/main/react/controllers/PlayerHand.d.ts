@@ -1,8 +1,6 @@
 import '../../styles/PlayerHand.module.css';
-import { Tile } from '../../types/tileType';
-interface IHand {
-    hand: Tile[];
-    cardDrawn: Tile | null;
+interface PHand {
+    hand: any[];
 }
-export default function (props: IHand): JSX.Element;
+export default function (props: PHand): JSX.Element;
 export {};

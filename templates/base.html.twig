@@ -19,7 +19,6 @@
                 <script src="/build/app.js" defer></script> -->
         {% endblock %}
     </head>
-    <div {{ react_component('board')}}></div>
-    <div {{ react_component('PlayerHand', { 'hand': hand }) }}></div>
+    <div {{ react_component('board', { 'roomId': room_id })}}></div>
 </div>
 </html>

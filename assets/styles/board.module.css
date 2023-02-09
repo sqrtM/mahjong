@@ -1,3 +1,8 @@
+@font-face {
+    font-family:"mahjong";
+    src:url("../fonts/Mahjong.TTF");
+}
+
 .board {
     color: red;
     display: grid;

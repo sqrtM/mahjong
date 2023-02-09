@@ -23,8 +23,8 @@ class MahjongDeck
                     new MahjongTile(
                             Suit::Characters,
                         Value::tryFrom($i),
-                        ($j === 3 && $i === 5),
-                        !($j === 3 && $i === 5) ? Suit::Characters->value . Value::tryFrom($i)->value : Suit::Characters->value . Value::tryFrom($i)->value . 'r'
+                        ($j === 3 && $i === 5), // isRed?
+                        ($j === 3 && $i === 5) ? strtoupper(Suit::Characters->value) . Value::tryFrom($i)->value : Suit::Characters->value . Value::tryFrom($i)->value
                     )
                 );
             }
@@ -35,7 +35,7 @@ class MahjongDeck
                             Suit::Pins,
                         Value::tryFrom($i),
                         ($j == 3 && $i == 5),
-                        !($j === 3 && $i === 5) ? Suit::Pins->value . Value::tryFrom($i)->value : Suit::Pins->value . Value::tryFrom($i)->value . 'r'
+                        ($j === 3 && $i === 5) ? strtoupper(Suit::Pins->value) . Value::tryFrom($i)->value : Suit::Pins->value . Value::tryFrom($i)->value
                     )
                 );
             }
@@ -46,7 +46,7 @@ class MahjongDeck
                             Suit::Bamboo,
                         Value::tryFrom($i),
                         ($j == 3 && $i == 5),
-                        !($j === 3 && $i === 5) ? Suit::Bamboo->value . Value::tryFrom($i)->value : Suit::Bamboo->value . Value::tryFrom($i)->value . 'r'
+                        ($j === 3 && $i === 5) ? strtoupper(Suit::Bamboo->value) . Value::tryFrom($i)->value : Suit::Bamboo->value . Value::tryFrom($i)->value
                     )
                 );
             }
